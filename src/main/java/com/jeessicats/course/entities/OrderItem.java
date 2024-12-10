@@ -1,5 +1,6 @@
 package com.jeessicats.course.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.jeessicats.course.entities.pk.OrderItemPK;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
@@ -28,6 +29,7 @@ public class OrderItem implements Serializable {
         this.price = price;
     }
 
+    @JsonIgnore
     public Order getOrder() {
         return id.getOrder();
     }
